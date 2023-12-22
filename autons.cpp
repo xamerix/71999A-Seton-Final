@@ -302,8 +302,7 @@ void drive_and_turn(){
 ///
  
 void nearSide() {
-  chassis.set_turn_pid(0,TURN_SPEED);
-  chassis.wait_drive();
+  
   clamper.set_value(true);
   chassis.set_turn_pid(-45,TURN_SPEED);
   chassis.wait_drive();
@@ -317,9 +316,9 @@ void nearSide() {
   chassis.wait_drive();
   chassis.set_drive_pid(toCem(-7),DRIVE_SPEED);
   chassis.wait_drive();
-  chassis.set_drive_pid(toCem(7),DRIVE_SPEED);
+  chassis.set_drive_pid(toCem(9),DRIVE_SPEED);
   chassis.wait_drive();
-  chassis.set_drive_pid(toCem(-6),DRIVE_SPEED);
+  chassis.set_drive_pid(toCem(-7),DRIVE_SPEED);
   chassis.wait_drive();
   chassis.set_turn_pid(-45,TURN_SPEED);
   chassis.wait_drive();
@@ -330,11 +329,19 @@ void nearSide() {
   chassis.set_swing_pid(ez::LEFT_SWING,-70,SWING_SPEED);
   chassis.wait_drive();
   wings.set_value(false);
-  chassis.set_drive_pid(toCem(-30),DRIVE_SPEED);
+  chassis.set_drive_pid(toCem(-15),DRIVE_SPEED);
   chassis.wait_drive();
-  wings.set_value(true);
-
-
+  chassis.set_turn_pid(-90,TURN_SPEED);
+  chassis.wait_drive();
+  chassis.set_drive_pid(toCem(-12),DRIVE_SPEED);
+  chassis.wait_drive();
+  chassis.set_turn_pid(-90,TURN_SPEED);
+  chassis.wait_drive();
+ // wings.set_value(true);
+  chassis.set_drive_pid(toCem(-0.7),DRIVE_SPEED);
+  chassis.wait_drive();
+ // chassis.set_turn_pid(-75,TURN_SPEED);
+ // chassis.wait_drive();
   
 /*
   chassis.set_drive_pid(toCem(-16),DRIVE_SPEED);
@@ -424,6 +431,7 @@ void farSide() {
   clamper.set_value(false);
   chassis.set_drive_pid(toCem(18.5),DRIVE_SPEED);
   chassis.wait_drive();
+  /*
   chassis.set_swing_pid(ez::LEFT_SWING,45,SWING_SPEED);
   chassis.wait_drive();
   chassis.set_drive_pid(toCem(-25),DRIVE_SPEED);
@@ -439,7 +447,7 @@ void farSide() {
   chassis.wait_drive();
 
   
-
+*/
 
   
   

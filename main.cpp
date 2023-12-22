@@ -146,11 +146,11 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.add_autons({
-    Auton("skills", skills),
-    Auton("simple auton",nearSide),
-    Auton("Drive and Turn\n\nSlow down during drive.", drive_and_turn),
-    Auton("Combine all 3 movements", combining_movements),
-    Auton("Interference\n\nAfter driving forward, robot performs differently if interfered or not.", interfered_example),
+    Auton("near", nearSide),
+   // Auton("simple auton",skills),
+   // Auton("Drive and Turn\n\nSlow down during drive.", drive_and_turn),
+   // Auton("Combine all 3 movements", combining_movements),
+   // Auton("Interference\n\nAfter driving forward, robot performs differently if interfered or not.", interfered_example),
   });
 
   // Initialize chassis and auton selector
@@ -285,7 +285,6 @@ void opcontrol() {
     if (master.get_digital_new_press(E_CONTROLLER_DIGITAL_A)) {
       blockerState = !blockerState;
       blocker.set_value(blockerState);
-      stateOP = 3;
     }
   
     pros::delay(ez::util::DELAY_TIME); // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
